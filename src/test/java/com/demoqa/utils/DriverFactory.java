@@ -12,12 +12,20 @@ public final class DriverFactory {
 	public static void initDriver() {
 
         String browser = ConfigReader.get("browser");
-        boolean headless = Boolean.parseBoolean(ConfigReader.get("headless"));
+        boolean headless = Boolean.parseBoolean(
+        	    System.getProperty(
+        	        "headless",
+        	        ConfigReader.get("headless")
+        	    )
+        	);
+
 
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
             if (headless) {
-                options.addArguments("--headless=new");
+            	options.addArguments("--headless=new");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
             }
             driver.set(new ChromeDriver(options));
         } else {

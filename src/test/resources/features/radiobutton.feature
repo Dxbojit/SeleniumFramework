@@ -1,4 +1,4 @@
-@regression
+@regression @buttons
 Feature:Radio Button Interaction
 
 Scenario Outline: Select radio button option
