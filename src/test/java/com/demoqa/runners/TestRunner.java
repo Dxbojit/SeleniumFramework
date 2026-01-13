@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 features = "src/test/resources",
 glue= "com.demoqa.stepdefinitions",
 tags= "${cucumber.filter.tags}",
-plugin= {"pretty","html:target/cucumber-report.html"},
+plugin= {"pretty","html:target/cucumber-report.html","json:target/cucumber-reports/cucumber.json"},
 monochrome= true
 )
 
