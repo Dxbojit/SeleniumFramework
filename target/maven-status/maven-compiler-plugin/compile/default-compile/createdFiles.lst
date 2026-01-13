@@ -1,6 +1,0 @@
-com\demoqa\pages\BasePage.class
-com\demoqa\pages\elements\CheckBoxPage.class
-com\demoqa\pages\elements\TextBoxPage.class
-com\demoqa\pages\HomePage.class
-com\demoqa\pages\elements\ButtonsPage.class
-com\demoqa\pages\elements\RadioButtonPage.class
