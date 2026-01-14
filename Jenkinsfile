@@ -1,14 +1,15 @@
 pipeline {
     agent any
 
+    parameters{
+        choice(name: 'TAGS', choices: ['@regression','@smoke'] , description: 'Select the tag to run tests for')
+        boolean(name: 'HEADLESS', defaultValue: true, description: 'Run tests in headless mode')
+        choice(name: 'BROWSER', choices: ['chrome','firefox'] , description: 'Select the browser to run tests on')
+    }
+
     tools {
         jdk 'JDK-17'
         maven 'Maven-3.9.12'
-    }
-
-    environment {
-        HEADLESS = 'true'
-        TAGS = '@regression'
     }
 
     stages {
@@ -26,6 +27,7 @@ pipeline {
                     mvn clean test ^
                     -Dcucumber.filter.tags=%TAGS% ^
                     -Dheadless=%HEADLESS%
+                    -Dbrowser=%BROWSER%
                 """
             }
         }
