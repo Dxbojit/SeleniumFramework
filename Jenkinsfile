@@ -3,7 +3,7 @@ pipeline {
 
     parameters{
         choice(name: 'TAGS', choices: ['@regression','@smoke'] , description: 'Select the tag to run tests for')
-        boolean(name: 'HEADLESS', defaultValue: true, description: 'Run tests in headless mode')
+        booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Run tests in headless mode')
         choice(name: 'BROWSER', choices: ['chrome','firefox'] , description: 'Select the browser to run tests on')
     }
 
