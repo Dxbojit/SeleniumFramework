@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         HEADLESS = 'true'
-        TAGS = '@smoke'
+        TAGS = '@regression'
     }
 
     stages {
