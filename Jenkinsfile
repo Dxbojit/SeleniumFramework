@@ -22,11 +22,11 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                sh '''
-                    mvn clean test \
-                    -Dcucumber.filter.tags=${TAGS} \
-                    -Dheadless=${HEADLESS}
-                '''
+                bat """
+                    mvn clean test ^
+                    -Dcucumber.filter.tags=%TAGS% ^
+                    -Dheadless=%HEADLESS%
+                """
             }
         }
     }
