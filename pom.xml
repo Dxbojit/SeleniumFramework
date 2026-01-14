@@ -3,6 +3,10 @@
   <groupId>com.ibm.Jenkinstest</groupId>
   <artifactId>UdemyJenkinsandCucumber</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
   <dependencies>
   		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
